@@ -15,6 +15,7 @@ import { SinglePostPage } from '../pages/single-post/single-post';
 import { BuscaPage } from '../pages/busca/busca';
 import { PerfilPage } from '../pages/perfil/perfil';
 import { SalvosPage } from '../pages/salvos/salvos';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { SalvosPage } from '../pages/salvos/salvos';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    FormsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

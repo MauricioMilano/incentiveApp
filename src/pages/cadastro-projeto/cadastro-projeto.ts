@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { FormsModule } from '@angular/forms';
 
 /**
  * Generated class for the CadastroProjetoPage page.
@@ -15,6 +16,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class CadastroProjetoPage {
 
+  titulo: string;
+  texto: string;
+  colaboradores: string;
+  nomeImagem = "default";
+  image;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -22,4 +29,24 @@ export class CadastroProjetoPage {
     console.log('ionViewDidLoad CadastroProjetoPage');
   }
 
+  changeListener(data): void {
+    this.readThis(data.target);
+    console.log(data);
+    
+  }
+  
+  readThis(inputValue: any): void {
+    let file: File = inputValue.files[0];
+    var myReader: FileReader = new FileReader();
+
+    this.nomeImagem = file.name;
+    // let myReader: FileReader = new FileReader();
+  
+     myReader.onloadend = ((e) => {
+      this.image = myReader.result; 
+     })
+     
+     myReader.readAsDataURL(file);
+     console.log(file);
+  }
 }
