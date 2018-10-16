@@ -12,29 +12,29 @@
 
 </ion-header>
 <ion-content padding>
-
-    <form>
-        <ion-item>
-          <ion-label>Título</ion-label>
-          <ion-input type="text" [(ngModel)]="titulo" name="titulo"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label>Descrição</ion-label>
-          <ion-textarea [(ngModel)]="texto" name="descricao"></ion-textarea>
-        </ion-item>
-        <ion-item>
-            <ion-label>  Colaboradores</ion-label>
-            <ion-input type="text" [(ngModel)]="colaboradores" name="colaboradores"></ion-input>
-        </ion-item>
-        <ion-item>
-            <button ion-button>
-              <label for="fotos">Suas fotos</label>
-              <input id="fotos" type="file" style="display: none" accept="image/*" name="fotos" (change)="changeListener($event)">
-              
-            </button>
-        </ion-item>
-        <button button ion-button type="submit" block (click)="onSubmit()">Criar projeto</button>
-      </form>
-      <img *ngIf=temImagem [src]=image alt="">
+  <ion-item>
+    <ion-label stacked>Título</ion-label>
+    <ion-input type="text" [(ngModel)]="titulo" name="titulo"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked>Descrição</ion-label>
+    <ion-textarea [(ngModel)]="texto" name="descricao"></ion-textarea>
+  </ion-item>
+  <ion-item>
+      <ion-label stacked>Colaboradores</ion-label>
+      <ion-input type="text" [(ngModel)]="colaboradores" name="colaboradores"></ion-input>
+  </ion-item>
+  <ion-item>
+      <button ion-button>
+        <label for="fotos">Suas fotos</label>
+        <input multiple id="fotos" type="file" style="display: none" accept="image/*" name="fotos" (change)="changeListener($event)">
+        
+      </button>
+  </ion-item>
+  <button button ion-button type="submit" block (click)="onSubmit()">Criar projeto</button>
+  <div *ngIf=temImagem>
+      <img *ngFor="let item of image"[src]=item alt="">
+  </div>
+  
 
 </ion-content>
