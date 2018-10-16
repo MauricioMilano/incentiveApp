@@ -25,5 +25,10 @@ export class SinglePostPage {
   entraPerfil(){
     this.navCtrl.setRoot(PerfilPage);
   }
+  enviaComentario(){
+    
 
+
+    
+  }
 }

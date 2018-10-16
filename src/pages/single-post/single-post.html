@@ -32,12 +32,12 @@
       <img src="assets/imgs/aluno.jpg" class="portrait" alt="Image" />
     </div> -->
   
-    <ion-card-header (click)="entraPerfil()">
+    <!-- <ion-card-header (click)="entraPerfil()">
       Jorge Carlos
-    </ion-card-header>
-
-    <ion-card-content>
-         Bom projeto
-    </ion-card-content>
+    </ion-card-header> -->
+    <ion-item>
+        <ion-input type="text" [(ngModel)]="comentario" (placeholder)="comentario"></ion-input>
+    </ion-item>
+     <button ion-button (click)="enviaComentario()">Enviar</button>
   </ion-card>
 </ion-content>
