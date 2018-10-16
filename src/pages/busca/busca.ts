@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { FiltroPage } from '../filtro/filtro';
 
 /**
  * Generated class for the BuscaPage page.
@@ -21,5 +22,17 @@ export class BuscaPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad BuscaPage');
   }
-
+  materia(){
+    this.navCtrl.push(FiltroPage,{type:"materia"});
+  }
+  universidade(){
+    this.navCtrl.push(FiltroPage,{type:"universidade"});
+  }
+  cursos
+  (){
+    this.navCtrl.push(FiltroPage,{type:"curso"});
+  }  
+  pessoas(){
+    this.navCtrl.push(FiltroPage,{type:"pessoas"});
+  }
 }
