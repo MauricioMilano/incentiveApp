@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { BuscaPage } from '../busca/busca';
+import { TabsPage } from '../tabs/tabs';
 
 /**
  * Generated class for the LoginPage page.
@@ -21,5 +23,10 @@ export class LoginPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
-
+  entraConvidado(){
+    this.navCtrl.setRoot(BuscaPage);
+  }
+  login(){
+    this.navCtrl.setRoot(TabsPage);
+  }
 }
