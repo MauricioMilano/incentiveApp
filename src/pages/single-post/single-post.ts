@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { PerfilPage } from '../perfil/perfil';
 
 /**
  * Generated class for the SinglePostPage page.
@@ -20,6 +21,9 @@ export class SinglePostPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SinglePostPage');
+  }
+  entraPerfil(){
+    this.navCtrl.setRoot(PerfilPage);
   }
 
 }
