@@ -21,6 +21,7 @@ export class CadastroProjetoPage {
   colaboradores: string;
   nomeImagem = "default";
   image;
+  temImagem = false;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -44,6 +45,7 @@ export class CadastroProjetoPage {
   
      myReader.onloadend = ((e) => {
       this.image = myReader.result; 
+      this.temImagem = true;
      })
      
      myReader.readAsDataURL(file);

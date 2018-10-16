@@ -19,7 +19,7 @@
           <ion-input type="text" [(ngModel)]="titulo" name="titulo"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label>  Descrição</ion-label>
+          <ion-label>Descrição</ion-label>
           <ion-textarea [(ngModel)]="texto" name="descricao"></ion-textarea>
         </ion-item>
         <ion-item>
@@ -35,6 +35,6 @@
         </ion-item>
         <button button ion-button type="submit" block (click)="onSubmit()">Criar projeto</button>
       </form>
-      <img [src]=image alt="">
+      <img *ngIf=temImagem [src]=image alt="">
 
 </ion-content>

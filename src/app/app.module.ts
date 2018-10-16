@@ -16,6 +16,8 @@ import { BuscaPage } from '../pages/busca/busca';
 import { PerfilPage } from '../pages/perfil/perfil';
 import { SalvosPage } from '../pages/salvos/salvos';
 import { FormsModule } from '@angular/forms';
+import { FiltroPage } from '../pages/filtro/filtro';
+import { MateriasProvider } from '../providers/materias/materias';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { FormsModule } from '@angular/forms';
     SinglePostPage,
     BuscaPage,
     SalvosPage,
-    PerfilPage
+    PerfilPage,
+    FiltroPage
   ],
   imports: [
     BrowserModule,
@@ -45,12 +48,14 @@ import { FormsModule } from '@angular/forms';
     SinglePostPage,
     BuscaPage,
     SalvosPage,
-    PerfilPage
+    PerfilPage,
+    FiltroPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    MateriasProvider
   ]
 })
 export class AppModule {}
