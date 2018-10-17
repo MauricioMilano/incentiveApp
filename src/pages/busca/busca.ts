@@ -28,8 +28,7 @@ export class BuscaPage {
   universidade(){
     this.navCtrl.push(FiltroPage,{type:"universidade"});
   }
-  cursos
-  (){
+  cursos(){
     this.navCtrl.push(FiltroPage,{type:"curso"});
   }  
   pessoas(){

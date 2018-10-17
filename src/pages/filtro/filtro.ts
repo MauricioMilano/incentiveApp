@@ -20,16 +20,26 @@ export class FiltroPage {
   public instituicoes:any;
   public cursoNames:any;
   public type;
+  public objfinal= [];
   constructor(public navCtrl: NavController, public navParams: NavParams,private cursos:CursosProvider, private materias:MateriasProvider, public universidades:UniversidadesProvider) {
     this.type = this.navParams.get("type");
 
   }
-
   ionViewDidLoad() {
     this.disciplinas = this.materias.getMaterias();
     this.instituicoes = this.universidades.getUniversidades();
     this.cursoNames = this.cursos.getCursos();
     console.log(this.cursoNames)
+  }
+  
+  atualizaObjeto(objeto){
+    let index = this.objfinal.indexOf(objeto);
+    if (index>-1){
+      this.objfinal.splice(index,1);
+    }else{
+      this.objfinal.push(objeto);
+    }
+  
   }
 
 }

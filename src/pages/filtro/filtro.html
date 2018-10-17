@@ -17,36 +17,36 @@
       <h4>Matemática</h4>
       <ion-item *ngFor="let item of disciplinas.matematica">
           <ion-label>{{item}}</ion-label>
-          <ion-checkbox color="" checked="false"></ion-checkbox>
+          <ion-checkbox color="" (ionChange)="atualizaObjeto(item)" checked="false"></ion-checkbox>
       </ion-item>
       <h4>Fisica</h4>
       <ion-item *ngFor="let item of disciplinas.fisica">
           <ion-label>{{item}}</ion-label>
-          <ion-checkbox  checked="false"></ion-checkbox>
+        <ion-checkbox (ionChange)="atualizaObjeto(item)" checked="false"></ion-checkbox>
       </ion-item>
       <h4>Filosofia</h4>
       <ion-item *ngFor="let item of disciplinas.filosofia">
           <ion-label>{{item}}</ion-label>
-          <ion-checkbox  checked="false"></ion-checkbox>
+          <ion-checkbox (ionChange)="atualizaObjeto(item)" checked="false"></ion-checkbox>
       </ion-item>
       <h4>Quimica</h4>
       <ion-item  *ngFor="let item of disciplinas.quimica">
           <ion-label>{{item}}</ion-label>
-          <ion-checkbox  checked="false"></ion-checkbox>
+          <ion-checkbox (ionChange)="atualizaObjeto(item)" checked="false"></ion-checkbox>
       </ion-item>
     </div>
       <div *ngIf="instituicoes && type== 'universidade'">
           <h4>Rio de Janeiro</h4>
           <ion-item *ngFor="let item of instituicoes.rio">
               <ion-label>{{item}}</ion-label>
-              <ion-checkbox  checked="false"></ion-checkbox>
+              <ion-checkbox (ionChange)="atualizaObjeto(item)" checked="false"></ion-checkbox>
           </ion-item>
       </div>
       <div *ngIf="cursoNames && type== 'curso'">
         <h4>Bacharelado</h4>
           <ion-item *ngFor="let item of cursoNames">
               <ion-label>{{item}}</ion-label>
-              <ion-checkbox  checked="false"></ion-checkbox>
+              <ion-checkbox (ionChange)="atualizaObjeto(item)"  checked="false"></ion-checkbox>
           </ion-item>
           <button class="btn_filtro"  ion-button block (click)="enviar">Pesquisar</button>
 
