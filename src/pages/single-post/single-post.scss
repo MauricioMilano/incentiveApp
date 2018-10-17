@@ -6,5 +6,12 @@ page-single-post {
   .label-ios {
     margin: 11px 8px 11px 0;
     font-size: small;
-}
+    }
+    .swiper-slide img {
+        margin: 0 auto;
+        width: auto;
+        max-width: 100%;
+        height: auto;
+        max-height: 100%;
+    }
 }

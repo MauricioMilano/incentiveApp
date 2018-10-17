@@ -21,10 +21,14 @@ export class ProjetoProvider {
             materias: string[]
             }
 
-  constructor(public http: HttpClient) {
+  constructor() {
     console.log('Hello ProjetoProvider Provider');
   }
   setProjeto(data) {
+    
+  }
+
+  setComentario(data) {
     
   }
 

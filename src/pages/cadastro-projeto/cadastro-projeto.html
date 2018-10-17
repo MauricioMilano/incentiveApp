@@ -16,15 +16,15 @@
 <ion-content padding>
   <ion-item>
     <ion-label stacked>Título</ion-label>
-    <ion-input type="text" [(ngModel)]="titulo"></ion-input>
+    <ion-input type="text" required [(ngModel)]="titulo"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label stacked>Descrição</ion-label>
-    <ion-textarea rows="5" [(ngModel)]="texto"></ion-textarea>
+    <ion-textarea rows="5" required [(ngModel)]="texto"></ion-textarea>
   </ion-item>
   <ion-item>
     <ion-label stacked>Colaboradores</ion-label>
-    <ion-input type="text" [(ngModel)]="colaboradores"></ion-input>
+    <ion-input type="text" required [(ngModel)]="colaboradores"></ion-input>
   </ion-item>
   <ion-item>
     <button ion-button>

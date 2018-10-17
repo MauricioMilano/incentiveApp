@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { PerfilPage } from '../perfil/perfil';
+import { ProjetoProvider } from '../../providers/projeto/projeto';
 
 /**
  * Generated class for the SinglePostPage page.
@@ -18,7 +19,7 @@ export class SinglePostPage {
   public comentarios = [];
   public comentario;
   public post;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private projeto: ProjetoProvider) {
 
   }
 
@@ -38,5 +39,6 @@ export class SinglePostPage {
     }
     this.comentarios.push(obj);
     this.comentario = "";
+    this.projeto.setComentario(obj);
   }
 }

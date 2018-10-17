@@ -91,6 +91,13 @@ export class CadastroProjetoPage {
   }
   
   onSubmit() {
-    this.navCtrl.push(FiltroPage, {type: "materia", pai: "cadastro"});
+    let post = {
+      id: 1,
+      nomeUsuario: "humano",
+      titulo: this.titulo,
+      descricao: this.texto,
+      fotos: this.image64
+    }
+    this.navCtrl.push(FiltroPage, {type: "materia", pai: "cadastro", post: post});
   }
 }

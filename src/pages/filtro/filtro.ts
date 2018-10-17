@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { MateriasProvider } from '../../providers/materias/materias';
 import { UniversidadesProvider} from "../../providers/universidades/universidades";
 import { CursosProvider } from '../../providers/cursos/cursos';
+import { ProjetoProvider } from '../../providers/projeto/projeto';
 /**
  * Generated class for the FiltroPage page.
  *
@@ -22,9 +23,13 @@ export class FiltroPage {
   public cursoNames:any;
   public type;
   public objfinal= [];
-  constructor(public navCtrl: NavController, public navParams: NavParams,private cursos:CursosProvider, private materias:MateriasProvider, public universidades:UniversidadesProvider) {
+  public post;
+  constructor(public navCtrl: NavController, public navParams: NavParams,private cursos:CursosProvider, 
+              private materias:MateriasProvider, public universidades:UniversidadesProvider, 
+              private projeto: ProjetoProvider, private alert: AlertController) {
     this.type = this.navParams.get("type");
     this.pai = this.navParams.get("pai");
+    this.post = this.navParams.get("post");
   }
   ionViewDidLoad() {
     this.disciplinas = this.materias.getMaterias();
@@ -49,7 +54,15 @@ export class FiltroPage {
   }
 
   onCadastrar() {
+    this.post.materias = this.objfinal;
+    this.projeto.setProjeto(this.post);
 
+    let alert = this.alert.create({
+      title: 'Projeto criado!',
+      subTitle: 'Obrigado pela contribuição, ' + this.post.nomeUsuario,
+      buttons: ['De nada!']
+    });
+    alert.present();
   }
 
 }
