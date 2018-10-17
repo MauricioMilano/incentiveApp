@@ -32,3 +32,17 @@
         padding-top: 20px;
     }
 }
+
+.button-box {
+    width: calc(100% - 40px);
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 10px;
+}
+
+.back-button{
+    position: absolute;
+    z-index: 10;
+    color: #ff7d24;
+}

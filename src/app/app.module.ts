@@ -20,6 +20,7 @@ import { FiltroPage } from '../pages/filtro/filtro';
 import { MateriasProvider } from '../providers/materias/materias';
 import { UniversidadesProvider } from '../providers/universidades/universidades';
 import { CursosProvider } from '../providers/cursos/cursos';
+import { ProjetoProvider } from '../providers/projeto/projeto';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { CursosProvider } from '../providers/cursos/cursos';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     MateriasProvider,
     UniversidadesProvider,
-    CursosProvider
+    CursosProvider,
+    ProjetoProvider
   ]
 })
 export class AppModule {}
