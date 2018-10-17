@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FiltroPage } from '../filtro/filtro';
+import { FeedPage } from '../feed/feed';
 
 /**
  * Generated class for the BuscaPage page.
@@ -33,5 +34,8 @@ export class BuscaPage {
   }  
   pessoas() {
     this.navCtrl.push(FiltroPage,{type:"pessoas", pai:"busca"});
+  }
+  feed(){
+    this.navCtrl.push(FeedPage);
   }
 }

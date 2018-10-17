@@ -24,7 +24,7 @@ export class PerfilPage {
   }
 
   onCriarProjeto() {
-    this.app.getRootNav().setRoot(CadastroProjetoPage);
+    this.navCtrl.push(CadastroProjetoPage);
   }
 
 }

@@ -21,6 +21,7 @@ import { MateriasProvider } from '../providers/materias/materias';
 import { UniversidadesProvider } from '../providers/universidades/universidades';
 import { CursosProvider } from '../providers/cursos/cursos';
 import { FeedPage } from '../pages/feed/feed';
+import { ProjetoProvider } from '../providers/projeto/projeto';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,9 @@ import { FeedPage } from '../pages/feed/feed';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp, {
+      tabsHideOnSubPages: true
+    }),
     IonicStorageModule.forRoot(),
     FormsModule
   ],
@@ -62,7 +65,8 @@ import { FeedPage } from '../pages/feed/feed';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     MateriasProvider,
     UniversidadesProvider,
-    CursosProvider
+    CursosProvider,
+    ProjetoProvider
   ]
 })
 export class AppModule {}

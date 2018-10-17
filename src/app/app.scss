@@ -1,21 +1,51 @@
-// http://ionicframework.com/docs/theming/
+.toolbar {
+    height: 60px;
+    &-ios {
+        height: 80px;
+    }
+    .toolbar-content {
+        height: 100%;
+        .title {
+            height: 100% !important;
+        }
+    }
+}
 
-
-// App Global Sass
-// --------------------------------------------------
-// Put style rules here that you want to apply globally. These
-// styles are for the entire app and not just one component.
-// Additionally, this file can be also used as an entry point
-// to import other Sass files to be included in the output CSS.
-//
-// Shared Sass variables, which can be used to adjust Ionic's
-// default Sass variables, belong in "theme/variables.scss".
-//
-// To declare rules for a specific mode, create a child rule
-// for the .md, .ios, or .wp mode classes. The mode class is
-// automatically applied to the <body> element in the app.
-
+.content-ios {
+    .fixed-content {
+        margin-top: 80px !important;
+    }
+    .scroll-content {
+        margin-top: 80px !important;
+    }
+}
 
 .swiper-pagination-bullet-active{
     background: #FF7D24!important;
+}
+.toolbar-background {
+    background-color: white;
+}
+
+.toolbar-title {
+    color: white;
+    text-align: center;
+    text-transform: capitalize;
+    &-ios {
+        padding-top: 20px;
+    }
+}
+
+.button-box {
+    width: calc(100% - 40px);
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 10px;
+}
+
+.back-button{
+    position: absolute;
+    z-index: 10;
+    color: #ff7d24;
 }

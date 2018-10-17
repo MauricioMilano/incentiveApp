@@ -1,7 +1,5 @@
 page-cadastro-projeto {
     .btn_cadastro_projeto {
-        position: fixed;
-        bottom: 20px;
         width: 90%;
         overflow: hidden;
     }
@@ -12,7 +10,14 @@ page-cadastro-projeto {
     }
 
     .scroll-content {
-        bottom: 56px;
+        bottom: 60px;
     }
+
+    .button-box{
+        button{
+            width: 50%;
+        }
+    }
+    
 }
 
