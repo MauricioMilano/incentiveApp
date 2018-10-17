@@ -15,6 +15,7 @@ import { SinglePostPage } from '../pages/single-post/single-post';
 import { BuscaPage } from '../pages/busca/busca';
 import { PerfilPage } from '../pages/perfil/perfil';
 import { SalvosPage } from '../pages/salvos/salvos';
+import { FormsModule } from '@angular/forms';
 import { FiltroPage } from '../pages/filtro/filtro';
 import { MateriasProvider } from '../providers/materias/materias';
 import { UniversidadesProvider } from '../providers/universidades/universidades';
@@ -35,8 +36,11 @@ import { CursosProvider } from '../providers/cursos/cursos';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot()
+    IonicModule.forRoot(MyApp, {
+      tabsHideOnSubPages: true
+    }),
+    IonicStorageModule.forRoot(),
+    FormsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

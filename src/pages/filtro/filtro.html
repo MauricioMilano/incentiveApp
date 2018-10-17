@@ -6,10 +6,12 @@
 -->
 <ion-header>
 
-  <ion-navbar hideBackButton>
-    <ion-title>
-      <img alt="logo" height="40" src="../../assets/imgs/incentiveLogo.png">
-    </ion-title>
+  <ion-navbar>
+      <ion-title>
+        <img alt="logo" height="40" src="../../assets/imgs/incentiveLogo.png">
+      </ion-title>
+    <ion-title *ngIf="pai==='busca'">Filtro</ion-title>
+    <ion-title *ngIf="pai==='cadastro'">Conteudos usados</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -36,6 +38,7 @@
           <ion-label>{{item}}</ion-label>
           <ion-checkbox (ionChange)="atualizaObjeto(item)" checked="false"></ion-checkbox>
       </ion-item>
+      
     </div>
       <div *ngIf="instituicoes && type== 'universidade'">
           <h4>Rio de Janeiro</h4>
@@ -50,7 +53,7 @@
               <ion-label>{{item}}</ion-label>
               <ion-checkbox (ionChange)="atualizaObjeto(item)"  checked="false"></ion-checkbox>
           </ion-item>
-          <button class="btn_filtro" *ngIf="pai=='busca'" ion-button block (click)="enviar">Pesquisar</button>
+          
 
       </div>
       <div *ngIf="type== 'pessoas'">
@@ -60,8 +63,12 @@
               {{ item }}
             </ion-item>
           </ion-list>
-          <button class="btn_filtro" *ngIf="pai=='busca'"  ion-button block (click)="enviar">Pesquisar</button>
+          
         </div>
-        <button *ngIf="type!= 'pessoas'&& type!='curso' && pai=='busca'"   ion-button block (click)="enviar">Pesquisar</button>
-
+        <div class="button-box" *ngIf="pai==='busca'">
+          <button ion-button block (click)="onPesquisar()">Pesquisar</button>
+        </div>
+        <div class="button-box" *ngIf="type!=='pessoas'&& type!=='curso' && pai==='cadastro'">
+          <button ion-button (click)="onCadastrar()">Cadastrar</button>
+        </div>
 </ion-content>
