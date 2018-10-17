@@ -73,7 +73,4 @@ export class FiltroPage {
     this.navCtrl.push(SinglePostPage, {post: this.post});
     
   }
-
-  
-
 }
