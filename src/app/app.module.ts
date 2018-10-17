@@ -20,8 +20,6 @@ import { FiltroPage } from '../pages/filtro/filtro';
 import { MateriasProvider } from '../providers/materias/materias';
 import { UniversidadesProvider } from '../providers/universidades/universidades';
 import { CursosProvider } from '../providers/cursos/cursos';
-import { FeedPage } from '../pages/feed/feed';
-import { ProjetoProvider } from '../providers/projeto/projeto';
 
 @NgModule({
   declarations: [
@@ -34,14 +32,11 @@ import { ProjetoProvider } from '../providers/projeto/projeto';
     BuscaPage,
     SalvosPage,
     PerfilPage,
-    FiltroPage,
-    FeedPage
+    FiltroPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp, {
-      tabsHideOnSubPages: true
-    }),
+    IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
     FormsModule
   ],
@@ -56,8 +51,7 @@ import { ProjetoProvider } from '../providers/projeto/projeto';
     BuscaPage,
     SalvosPage,
     PerfilPage,
-    FiltroPage,
-    FeedPage
+    FiltroPage
   ],
   providers: [
     StatusBar,
@@ -65,8 +59,7 @@ import { ProjetoProvider } from '../providers/projeto/projeto';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     MateriasProvider,
     UniversidadesProvider,
-    CursosProvider,
-    ProjetoProvider
+    CursosProvider
   ]
 })
 export class AppModule {}
