@@ -24,7 +24,7 @@ export class ProjetoProvider {
             materias: string[],
             comentarios: string[]
             }[] = [];
-public todosProjetos = [];
+public todosProjetos:any = [];
   constructor(private storage: Storage) {
     console.log('Hello ProjetoProvider Provider');
   }
@@ -59,24 +59,33 @@ public todosProjetos = [];
     return promise;
   }
   getProjetosMateria(materias: string[]) {
-    let cont = 0;
-    let total = this.getProjetos.length; 
+  let novo = [];
+  var promise = new Promise ((resolve, reject)=>{
     this.getProjetos().then(()=>{
-      this.todosProjetos.forEach(resp=>{
-        if(resp.materias!=materias){
-          let index = this.todosProjetos.indexOf(resp);
-          if (index< 0 ){
-            this.todosProjetos.splice(index,1);
-          }
+      this.todosProjetos.forEach(element => {
+        if(this.verifica(materias,element)){
+          novo.push(element);
         }
-        cont ++;
-        if(cont==total){
-          return this.todosProjetos; 
-        }
-      })
 
+      });
+    }).then(()=>{
+      resolve(novo);
     })
-
+  })
+  return promise;
+}
+  verifica(materias,projeto){
+    let cont = 0; 
+    materias.forEach(element => {
+     let index = projeto.materias.indexOf(element);
+     if(index>=0){
+       return false
+     }
+     cont++;
+     if(cont==materias.length){
+       return true;
+     }
+    })
   }
   getProjetosUniversidade(univ: string) {
     // TODO

@@ -44,8 +44,24 @@
     bottom: 10px;
 }
 
-.back-button{
+.back-button {
     position: absolute;
     z-index: 10;
     color: #ff7d24;
+}
+
+.button-md {
+    height: 50px;
+    border-radius: 50px;
+    font-size: 16px;
+    padding: 0 35px;
+}
+
+.tabbar {
+    background: #ffffff !important;
+}
+
+.tab-button-icon {
+    font-size: 35px !important;
+    font-weight: 700 !important;
 }

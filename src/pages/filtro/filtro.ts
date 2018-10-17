@@ -5,6 +5,7 @@ import { UniversidadesProvider} from "../../providers/universidades/universidade
 import { CursosProvider } from '../../providers/cursos/cursos';
 import { ProjetoProvider } from '../../providers/projeto/projeto';
 import { SinglePostPage } from '../single-post/single-post';
+import { FeedPage } from '../feed/feed';
 /**
  * Generated class for the FiltroPage page.
  *
@@ -45,14 +46,19 @@ export class FiltroPage {
     }else{
       this.objfinal.push(objeto);
     }
-    console.log(this.objfinal);
     
   
   }
 
   onPesquisar() {
+  console.log(this.objfinal);
 
-  }
+  this.projeto.getProjetos().then(resp=>{
+    console.log("entrou aqui")
+    this.navCtrl.push(FeedPage,{posts:resp});
+  })
+  
+}
 
   onCadastrar() {
     this.post.materias = this.objfinal;

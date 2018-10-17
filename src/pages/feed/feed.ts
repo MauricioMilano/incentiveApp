@@ -31,10 +31,15 @@ export class FeedPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FeedPage');
-     this.projetos.getProjetos().then(resp=>{
-       console.log(resp)
-      this.posts = resp;
-    });
+    if(!this.navParams.get('posts')){
+      this.projetos.getProjetos().then(resp=>{
+        console.log(resp)
+       this.posts = resp;
+     });
+    }else{
+      this.posts = this.navParams.get('posts')
+    }
+
     console.log(this.posts)
   }
   goToSinglePage(obj){
