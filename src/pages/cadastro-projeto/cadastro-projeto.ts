@@ -91,6 +91,6 @@ export class CadastroProjetoPage {
   }
   
   onSubmit() {
-    this.navCtrl.push(FiltroPage, {type: "materia"});
+    this.navCtrl.push(FiltroPage, {type: "materia", pai: "cadastro"});
   }
 }

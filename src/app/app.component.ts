@@ -10,7 +10,7 @@ import { CadastroProjetoPage } from '../pages/cadastro-projeto/cadastro-projeto'
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = CadastroProjetoPage;
+  rootPage:any = LoginPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

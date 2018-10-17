@@ -19,6 +19,8 @@ import { FormsModule } from '@angular/forms';
 import { FiltroPage } from '../pages/filtro/filtro';
 import { MateriasProvider } from '../providers/materias/materias';
 import { SelecionarTagsPage } from '../pages/selecionar-tags/selecionar-tags';
+import { UniversidadesProvider } from '../providers/universidades/universidades';
+import { CursosProvider } from '../providers/cursos/cursos';
 
 @NgModule({
   declarations: [
@@ -58,7 +60,9 @@ import { SelecionarTagsPage } from '../pages/selecionar-tags/selecionar-tags';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    MateriasProvider
+    MateriasProvider,
+    UniversidadesProvider,
+    CursosProvider
   ]
 })
 export class AppModule {}
