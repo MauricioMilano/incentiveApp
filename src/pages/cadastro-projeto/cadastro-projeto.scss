@@ -1,3 +1,18 @@
 page-cadastro-projeto {
+    .btn_cadastro_projeto {
+        position: fixed;
+        bottom: 20px;
+        width: 90%;
+        overflow: hidden;
+    }
 
+    .invisivel {
+        display: block;
+        height: 50px;
+    }
+
+    .scroll-content {
+        bottom: 56px;
+    }
 }
+

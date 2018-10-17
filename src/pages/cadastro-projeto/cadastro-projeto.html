@@ -7,12 +7,34 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>cadastroProjeto</ion-title>
+    <ion-title>Cadastro do projeto</ion-title>
   </ion-navbar>
 
 </ion-header>
-
-
 <ion-content padding>
+  <ion-item>
+    <ion-label stacked>Título</ion-label>
+    <ion-input type="text" [(ngModel)]="titulo"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked>Descrição</ion-label>
+    <ion-textarea rows="5" [(ngModel)]="texto"></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked>Colaboradores</ion-label>
+    <ion-input type="text" [(ngModel)]="colaboradores"></ion-input>
+  </ion-item>
+  <ion-item>
+    <button ion-button>
+      <label for="fotos">Suas fotos</label>
+      <input multiple id="fotos" type="file" style="display: none" accept="image/*" name="fotos" (change)="changeListener($event)">
+    </button>
+  </ion-item>
+  <ion-item *ngFor="let n of nomeImagem; let i = index">
+    <a (click)="delete(i)">{{ n }}</a>
+  </ion-item>
 
+
+  <button button ion-button type="submit" block (click)="onSubmit()" class="btn_cadastro_projeto">Escolher materias</button>
+  
 </ion-content>
