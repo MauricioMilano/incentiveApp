@@ -18,7 +18,6 @@ import { SalvosPage } from '../pages/salvos/salvos';
 import { FormsModule } from '@angular/forms';
 import { FiltroPage } from '../pages/filtro/filtro';
 import { MateriasProvider } from '../providers/materias/materias';
-import { SelecionarTagsPage } from '../pages/selecionar-tags/selecionar-tags';
 import { UniversidadesProvider } from '../providers/universidades/universidades';
 import { CursosProvider } from '../providers/cursos/cursos';
 
@@ -33,8 +32,7 @@ import { CursosProvider } from '../providers/cursos/cursos';
     BuscaPage,
     SalvosPage,
     PerfilPage,
-    FiltroPage,
-    SelecionarTagsPage
+    FiltroPage
   ],
   imports: [
     BrowserModule,
@@ -55,8 +53,7 @@ import { CursosProvider } from '../providers/cursos/cursos';
     BuscaPage,
     SalvosPage,
     PerfilPage,
-    FiltroPage,
-    SelecionarTagsPage
+    FiltroPage
   ],
   providers: [
     StatusBar,
