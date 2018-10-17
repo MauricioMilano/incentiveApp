@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { MateriasProvider } from '../../providers/materias/materias';
-
+import { UniversidadesProvider} from "../../providers/universidades/universidades";
+import { CursosProvider } from '../../providers/cursos/cursos';
 /**
  * Generated class for the FiltroPage page.
  *
@@ -15,25 +16,20 @@ import { MateriasProvider } from '../../providers/materias/materias';
   templateUrl: 'filtro.html',
 })
 export class FiltroPage {
-  matematica;
-  fisica;
-  filosofia;
-  quimica;
+  public disciplinas:any;
+  public instituicoes:any;
+  public cursoNames:any;
   public type;
-  constructor(public navCtrl: NavController, public navParams: NavParams, private materias:MateriasProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,private cursos:CursosProvider, private materias:MateriasProvider, public universidades:UniversidadesProvider) {
     this.type = this.navParams.get("type");
-    console.log(this.type);
-    console.log(this.materias.getMatematica() );
+
   }
 
-
-
   ionViewDidLoad() {
-    this.matematica = this.materias.matematica;
-    this.fisica = this.materias.fisica
-    this.filosofia = this.materias.filosofia;
-    this.quimica = this.materias.quimica;
-    console.log('ionViewDidLoad FiltroPage');
+    this.disciplinas = this.materias.getMaterias();
+    this.instituicoes = this.universidades.getUniversidades();
+    this.cursoNames = this.cursos.getCursos();
+    console.log(this.cursoNames)
   }
 
 }

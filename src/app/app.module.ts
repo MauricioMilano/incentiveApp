@@ -17,6 +17,8 @@ import { PerfilPage } from '../pages/perfil/perfil';
 import { SalvosPage } from '../pages/salvos/salvos';
 import { FiltroPage } from '../pages/filtro/filtro';
 import { MateriasProvider } from '../providers/materias/materias';
+import { UniversidadesProvider } from '../providers/universidades/universidades';
+import { CursosProvider } from '../providers/cursos/cursos';
 
 @NgModule({
   declarations: [
@@ -53,7 +55,9 @@ import { MateriasProvider } from '../providers/materias/materias';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    MateriasProvider
+    MateriasProvider,
+    UniversidadesProvider,
+    CursosProvider
   ]
 })
 export class AppModule {}
