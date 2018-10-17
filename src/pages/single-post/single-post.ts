@@ -13,12 +13,13 @@ import { ProjetoProvider } from '../../providers/projeto/projeto';
 @IonicPage()
 @Component({
   selector: 'page-single-post',
-  templateUrl: 'single-post.html',
+  templateUrl: 'single-post.html'
 })
 export class SinglePostPage {
   public comentarios = [];
   public comentario;
   public post;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, private projeto: ProjetoProvider) {
 
   }

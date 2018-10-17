@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SinglePostPage } from '../single-post/single-post';
+import { ProjetoProvider } from '../../providers/projeto/projeto';
 
 /**
  * Generated class for the FeedPage page.
@@ -15,7 +16,7 @@ import { SinglePostPage } from '../single-post/single-post';
   templateUrl: 'feed.html',
 })
 export class FeedPage {
-  public posts=[{
+  public post=[{
     nomeProj:"trabalho robotica",
     usuario:"Mauricio",
     fotoUsuario:"assets/imgs/aluno.jpg",
@@ -23,11 +24,18 @@ export class FeedPage {
     foto:"assets/imgs/rob.jpg",
     materiasIncluidas :["Progressão aritmética e geométrica", "Grandezas proporcionais", "Análise combinatória e probabilidade", "Trigonometria"]
   }]
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  public posts;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public projetos:ProjetoProvider) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FeedPage');
+     this.projetos.getProjetos().then(resp=>{
+       console.log(resp)
+      this.posts = resp;
+    });
+    console.log(this.posts)
   }
   goToSinglePage(obj){
     console.log("saiu:",obj);;

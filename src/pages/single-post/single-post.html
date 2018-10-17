@@ -19,31 +19,24 @@
   <ion-card *ngIf="post">
       <ion-slides pager>
 
-          <ion-slide>
-              <img src="{{post.foto}}"/>
+          <ion-slide *ngFor="let foto of post.fotos">
+              <img src="{{foto}}"/>
           </ion-slide>
-        
-          <ion-slide>
-              <img src="{{post.foto}}"/>
-          </ion-slide>
-        
-          <ion-slide>
-              <img src="{{post.foto}}"/>
-          </ion-slide>
+      
         
         </ion-slides>
 
     <ion-card-content>
       <ion-card-title>
-        {{post.nomeProj}}
+        {{post.titulo}}
         </ion-card-title>
-        <h5>Por {{post.usuario}}</h5>
+        <h5>Por {{post.nomeUsuario}}</h5>
       <p>{{post.descricao}}</p>
         <ion-list>
             <ion-list-header>
               Matérias relacionadas
             </ion-list-header>
-            <ion-item *ngFor="let materia of post.materiasIncluidas" >{{materia}}</ion-item>
+            <ion-item *ngFor="let materia of post.materias" >{{materia}}</ion-item>
           </ion-list>
     </ion-card-content>
   </ion-card>

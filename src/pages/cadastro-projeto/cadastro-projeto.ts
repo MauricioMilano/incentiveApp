@@ -94,6 +94,9 @@ export class CadastroProjetoPage {
     let post = {
       id: 1,
       nomeUsuario: "humano",
+      universidadeUsuario: "uff",
+      cursoUsuario: "CC",
+      fotoUsuario: "",
       titulo: this.titulo,
       descricao: this.texto,
       fotos: this.image64

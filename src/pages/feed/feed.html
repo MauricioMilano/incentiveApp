@@ -6,9 +6,11 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>feed</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>
+          <img alt="logo" height="40" src="../../assets/imgs/incentiveLogo.png">
+        </ion-title>
+      </ion-navbar>
 
 </ion-header>
 
@@ -18,13 +20,13 @@
 
         <ion-item>
           <ion-avatar item-start>
-            <img src="{{post.fotoUsuario}}">
+            <img src="../assets/imgs/aluno.jpg">
           </ion-avatar>
-          <h2>{{post.nomeProj}}</h2>
-          <p>por {{post.usuario}}</p>
+          <h2>{{post.titulo}}</h2>
+          <p>por {{post.nomeUsuario}}</p>
         </ion-item>
       
-        <img src="{{post.foto}}">
+        <img src="{{post.fotos[0]}}">
       
         <ion-card-content>
           <p>{{post.descricao}}</p>

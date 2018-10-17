@@ -4,6 +4,7 @@ import { MateriasProvider } from '../../providers/materias/materias';
 import { UniversidadesProvider} from "../../providers/universidades/universidades";
 import { CursosProvider } from '../../providers/cursos/cursos';
 import { ProjetoProvider } from '../../providers/projeto/projeto';
+import { SinglePostPage } from '../single-post/single-post';
 /**
  * Generated class for the FiltroPage page.
  *
@@ -63,6 +64,10 @@ export class FiltroPage {
       buttons: ['De nada!']
     });
     alert.present();
+    this.navCtrl.push(SinglePostPage, {post: this.post});
+    
   }
+
+  
 
 }
