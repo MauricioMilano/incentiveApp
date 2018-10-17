@@ -22,16 +22,16 @@ export class BuscaPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad BuscaPage');
   }
-  materia(){
-    this.navCtrl.push(FiltroPage,{type:"materia",pai:"busca"});
+  materia() {
+    this.navCtrl.push(FiltroPage,{type:"materia", pai:"busca"});
   }
-  universidade(){
-    this.navCtrl.push(FiltroPage,{type:"universidade",pai:"busca"});
+  universidade() {
+    this.navCtrl.push(FiltroPage,{type:"universidade", pai:"busca"});
   }
-  cursos(){
-    this.navCtrl.push(FiltroPage,{type:"curso",pai:"busca"});
+  cursos() {
+    this.navCtrl.push(FiltroPage,{type:"curso", pai:"busca"});
   }  
-  pessoas(){
-    this.navCtrl.push(FiltroPage,{type:"pessoas",pai:"busca"});
+  pessoas() {
+    this.navCtrl.push(FiltroPage,{type:"pessoas", pai:"busca"});
   }
 }

@@ -9,7 +9,7 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class MateriasProvider {
-  public materias ={
+  private materias ={
    "matematica":["Funções de 1° e 2° graus","Progressão aritmética e geométrica","Estatística","Grandezas proporcionais","Porcentagem","Trigonometria","Análise combinatória e probabilidade"],
    "fisica":["Mecânica","Eletricidade e Energia","Ondulatória","Termodinâmica","Óptica"],
    "filosofia":["Filosofia Temática","Filosofia Moderna","Filosofia Antiga","Filosofia Contemporânea"],
