@@ -24,13 +24,12 @@ export class FiltroPage {
   public objfinal= [];
   constructor(public navCtrl: NavController, public navParams: NavParams,private cursos:CursosProvider, private materias:MateriasProvider, public universidades:UniversidadesProvider) {
     this.type = this.navParams.get("type");
-    this.pai = this.navParams.get("pai") || null;
+    this.pai = this.navParams.get("pai");
   }
   ionViewDidLoad() {
     this.disciplinas = this.materias.getMaterias();
     this.instituicoes = this.universidades.getUniversidades();
     this.cursoNames = this.cursos.getCursos();
-    console.log(this.cursoNames);
   }
   
   atualizaObjeto(objeto){
@@ -40,7 +39,17 @@ export class FiltroPage {
     }else{
       this.objfinal.push(objeto);
     }
+    console.log(this.objfinal);
+    
   
+  }
+
+  onPesquisar() {
+
+  }
+
+  onCadastrar() {
+
   }
 
 }
