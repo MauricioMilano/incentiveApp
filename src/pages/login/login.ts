@@ -24,7 +24,7 @@ export class LoginPage {
     console.log('ionViewDidLoad LoginPage');
   }
   entraConvidado(){
-    this.navCtrl.setRoot(BuscaPage);
+    this.navCtrl.push(BuscaPage);
   }
   login(){
     this.navCtrl.setRoot(TabsPage);
