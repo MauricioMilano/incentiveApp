@@ -1,5 +1,41 @@
 page-busca {
-    .button-block{
-        padding:40pt 0pt;
+    .busca-title {
+        .toolbar-title{
+            color: #a7a7a7 !important;
+            font-size: 18px !important;
+            margin: 10px 0 20px !important;
+            font-weight: 300 !important;
+            text-align: left !important;
+        }
+    }
+    .button-block {
+        padding: 40pt 0pt;
+    }
+    .busca-button {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+        justify-content: center;
+        align-items: center;
+        height: 160px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        span {
+            display: flex;
+            flex-direction: column;
+            ion-img {
+                background: transparent;
+                height: 100px;
+                width: 100px;
+                margin-bottom: 5px;
+            }
+        }
+        &:nth-child(odd) {
+            background-color: #0FA8B2;
+        }
+        &:nth-child(even) {
+            background-color: #F68B42;
+        }
     }
 }
