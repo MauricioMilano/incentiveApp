@@ -6,6 +6,7 @@ import { CursosProvider } from '../../providers/cursos/cursos';
 import { ProjetoProvider } from '../../providers/projeto/projeto';
 import { SinglePostPage } from '../single-post/single-post';
 import { FeedPage } from '../feed/feed';
+import { RequestProvider } from '../../providers/request/request';
 /**
  * Generated class for the FiltroPage page.
  *
@@ -28,7 +29,7 @@ export class FiltroPage {
   public post;
   constructor(public navCtrl: NavController, public navParams: NavParams,private cursos:CursosProvider, 
               private materias:MateriasProvider, public universidades:UniversidadesProvider, 
-              private projeto: ProjetoProvider, private alert: AlertController) {
+              private projeto: ProjetoProvider, private alert: AlertController, private request:RequestProvider) {
     this.type = this.navParams.get("type");
     this.pai = this.navParams.get("pai");
     this.post = this.navParams.get("post");
@@ -62,18 +63,29 @@ export class FiltroPage {
 
   onCadastrar() {
     this.post.materias = this.objfinal;
-    this.projeto.setProjeto(this.post);
-
+    console.log(this.post);
+    let newObj ={
+      name:this.post.titulo,
+      description:this.post.descricao,
+      imgArray:this.post.fotos,
+      likes:0,
+      videoArray:[],
+      textArray:[]
+    }
+    
+    this.projeto.setProjetoDb(newObj);
     let alert = this.alert.create({
       title: 'Projeto criado!',
       subTitle: 'Obrigado pela contribuição, ' + this.post.nomeUsuario,
       buttons: ['De nada!']
     });
     alert.present();
-    this.navCtrl.push(SinglePostPage, {post: this.post});
+    //this.navCtrl.push(SinglePostPage, {post: this.post});
     
   }
 
-  
+  getItems(){
+    //console.log(this.request.getUsers())
+  }
 
 }

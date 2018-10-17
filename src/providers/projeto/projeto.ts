@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { NavController } from 'ionic-angular';
 import { SinglePostPage } from '../../pages/single-post/single-post';
+import { RequestProvider } from '../request/request';
 
 /*
   Generated class for the ProjetoProvider provider.
@@ -25,7 +26,7 @@ export class ProjetoProvider {
             comentarios: string[]
             }[] = [];
 public todosProjetos:any = [];
-  constructor(private storage: Storage) {
+  constructor(private storage: Storage, public request:RequestProvider) {
     console.log('Hello ProjetoProvider Provider');
   }
   setProjeto(data) {
@@ -40,7 +41,9 @@ public todosProjetos:any = [];
     });
     
   }
-
+  setProjetoDb(data){
+    this.request.postProjects(data);
+  }
   setComentario(data) {
 
   }
@@ -86,6 +89,7 @@ public todosProjetos:any = [];
        return true;
      }
     })
+    return true;
   }
   getProjetosUniversidade(univ: string) {
     // TODO

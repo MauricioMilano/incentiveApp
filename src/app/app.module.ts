@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicStorageModule } from '@ionic/storage';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-
+import { HttpModule } from '@angular/http';
 import { TabsPage } from '../pages/tabs/tabs';
 import { CadastroPage } from '../pages/cadastro/cadastro';
 import { LoginPage } from '../pages/login/login';
@@ -22,6 +22,7 @@ import { UniversidadesProvider } from '../providers/universidades/universidades'
 import { CursosProvider } from '../providers/cursos/cursos';
 import { FeedPage } from '../pages/feed/feed';
 import { ProjetoProvider } from '../providers/projeto/projeto';
+import { RequestProvider } from '../providers/request/request';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { ProjetoProvider } from '../providers/projeto/projeto';
       tabsHideOnSubPages: true
     }),
     IonicStorageModule.forRoot(),
-    FormsModule
+    FormsModule,
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -66,7 +68,8 @@ import { ProjetoProvider } from '../providers/projeto/projeto';
     MateriasProvider,
     UniversidadesProvider,
     CursosProvider,
-    ProjetoProvider
+    ProjetoProvider,
+    RequestProvider
   ]
 })
 export class AppModule {}
