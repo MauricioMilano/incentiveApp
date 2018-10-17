@@ -16,6 +16,7 @@ import { CursosProvider } from '../../providers/cursos/cursos';
   templateUrl: 'filtro.html',
 })
 export class FiltroPage {
+  public pai:string;
   public disciplinas:any;
   public instituicoes:any;
   public cursoNames:any;
@@ -23,13 +24,13 @@ export class FiltroPage {
   public objfinal= [];
   constructor(public navCtrl: NavController, public navParams: NavParams,private cursos:CursosProvider, private materias:MateriasProvider, public universidades:UniversidadesProvider) {
     this.type = this.navParams.get("type");
-
+    this.pai = this.navParams.get("pai") || null;
   }
   ionViewDidLoad() {
     this.disciplinas = this.materias.getMaterias();
     this.instituicoes = this.universidades.getUniversidades();
     this.cursoNames = this.cursos.getCursos();
-    console.log(this.cursoNames)
+    console.log(this.cursoNames);
   }
   
   atualizaObjeto(objeto){

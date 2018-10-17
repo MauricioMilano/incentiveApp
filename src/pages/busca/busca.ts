@@ -23,15 +23,15 @@ export class BuscaPage {
     console.log('ionViewDidLoad BuscaPage');
   }
   materia(){
-    this.navCtrl.push(FiltroPage,{type:"materia"});
+    this.navCtrl.push(FiltroPage,{type:"materia",pai:"busca"});
   }
   universidade(){
-    this.navCtrl.push(FiltroPage,{type:"universidade"});
+    this.navCtrl.push(FiltroPage,{type:"universidade",pai:"busca"});
   }
   cursos(){
-    this.navCtrl.push(FiltroPage,{type:"curso"});
+    this.navCtrl.push(FiltroPage,{type:"curso",pai:"busca"});
   }  
   pessoas(){
-    this.navCtrl.push(FiltroPage,{type:"pessoas"});
+    this.navCtrl.push(FiltroPage,{type:"pessoas",pai:"busca"});
   }
 }

@@ -48,7 +48,7 @@
               <ion-label>{{item}}</ion-label>
               <ion-checkbox (ionChange)="atualizaObjeto(item)"  checked="false"></ion-checkbox>
           </ion-item>
-          <button class="btn_filtro"  ion-button block (click)="enviar">Pesquisar</button>
+          <button class="btn_filtro" *ngIf="pai=='busca'" ion-button block (click)="enviar">Pesquisar</button>
 
       </div>
       <div *ngIf="type== 'pessoas'">
@@ -58,8 +58,8 @@
               {{ item }}
             </ion-item>
           </ion-list>
-          <button class="btn_filtro"  ion-button block (click)="enviar">Pesquisar</button>
+          <button class="btn_filtro" *ngIf="pai=='busca'"  ion-button block (click)="enviar">Pesquisar</button>
         </div>
-        <button *ngIf="type!= 'pessoas'&& type!='curso'"   ion-button block (click)="enviar">Pesquisar</button>
+        <button *ngIf="type!= 'pessoas'&& type!='curso' && pai=='busca'"   ion-button block (click)="enviar">Pesquisar</button>
 
 </ion-content>
