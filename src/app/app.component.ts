@@ -5,12 +5,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { LoginPage } from '../pages/login/login';
 import { CadastroProjetoPage } from '../pages/cadastro-projeto/cadastro-projeto';
+import { SinglePostPage } from '../pages/single-post/single-post';
+import { FeedPage } from '../pages/feed/feed';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = LoginPage;
+  rootPage:any = FeedPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

@@ -20,6 +20,7 @@ import { FiltroPage } from '../pages/filtro/filtro';
 import { MateriasProvider } from '../providers/materias/materias';
 import { UniversidadesProvider } from '../providers/universidades/universidades';
 import { CursosProvider } from '../providers/cursos/cursos';
+import { FeedPage } from '../pages/feed/feed';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { CursosProvider } from '../providers/cursos/cursos';
     BuscaPage,
     SalvosPage,
     PerfilPage,
-    FiltroPage
+    FiltroPage,
+    FeedPage
   ],
   imports: [
     BrowserModule,
@@ -51,7 +53,8 @@ import { CursosProvider } from '../providers/cursos/cursos';
     BuscaPage,
     SalvosPage,
     PerfilPage,
-    FiltroPage
+    FiltroPage,
+    FeedPage
   ],
   providers: [
     StatusBar,

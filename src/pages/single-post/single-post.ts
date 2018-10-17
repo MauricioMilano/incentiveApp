@@ -17,10 +17,15 @@ import { PerfilPage } from '../perfil/perfil';
 export class SinglePostPage {
   public comentarios = [];
   public comentario;
+  public post;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+
   }
 
   ionViewDidLoad() {
+    this.post = this.navParams.get("post");
+    console.log("chegou:",this.post)
+  
     console.log('ionViewDidLoad SinglePostPage');
   }
   entraPerfil(){

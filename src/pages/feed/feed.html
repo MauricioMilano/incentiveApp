@@ -1,0 +1,35 @@
+<!--
+  Generated template for the FeedPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>feed</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-card *ngFor="let post of posts" (click)="goToSinglePage(post)">
+
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="{{post.fotoUsuario}}">
+          </ion-avatar>
+          <h2>{{post.nomeProj}}</h2>
+          <p>por {{post.usuario}}</p>
+        </ion-item>
+      
+        <img src="{{post.foto}}">
+      
+        <ion-card-content>
+          <p>{{post.descricao}}</p>
+        </ion-card-content>
+   
+      </ion-card>
+      
+</ion-content>
