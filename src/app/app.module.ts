@@ -38,7 +38,9 @@ import { CursosProvider } from '../providers/cursos/cursos';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp, {
+      tabsHideOnSubPages: true
+    }),
     IonicStorageModule.forRoot(),
     FormsModule
   ],

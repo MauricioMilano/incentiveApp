@@ -5,11 +5,10 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar>
     <ion-title>Cadastro do projeto</ion-title>
   </ion-navbar>
-
+    
 </ion-header>
 <ion-content padding>
   <ion-item>
@@ -34,7 +33,8 @@
     <a (click)="delete(i)">{{ n }}</a>
   </ion-item>
 
-
-  <button button ion-button type="submit" block (click)="onSubmit()" class="btn_cadastro_projeto">Escolher materias</button>
+  <div class="button-box">
+    <button button ion-button (click)="onSubmit()" class="btn_cadastro_projeto">Escolher materias</button>      
+  </div>
   
 </ion-content>
