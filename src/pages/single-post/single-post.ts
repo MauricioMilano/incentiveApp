@@ -15,7 +15,8 @@ import { PerfilPage } from '../perfil/perfil';
   templateUrl: 'single-post.html',
 })
 export class SinglePostPage {
-
+  public comentarios = [];
+  public comentario;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -26,9 +27,11 @@ export class SinglePostPage {
     this.navCtrl.setRoot(PerfilPage);
   }
   enviaComentario(){
-    
-
-
-    
+    let obj={
+      nome:"Humano",
+      comentario:this.comentario
+    }
+    this.comentarios.push(obj);
+    this.comentario = "";
   }
 }

@@ -27,17 +27,16 @@
     </ion-card-content>
   </ion-card>
   
-  <ion-card>
-    <!-- <div class="thumbnail">
-      <img src="assets/imgs/aluno.jpg" class="portrait" alt="Image" />
-    </div> -->
-  
-    <!-- <ion-card-header (click)="entraPerfil()">
-      Jorge Carlos
-    </ion-card-header> -->
-    <ion-item>
-        <ion-input type="text" [(ngModel)]="comentario" (placeholder)="comentario"></ion-input>
-    </ion-item>
-     <button ion-button (click)="enviaComentario()">Enviar</button>
+  <ion-card *ngFor="let item of comentarios">
+      <ion-card-header>
+          {{item.nome}}
+        </ion-card-header>
+        <ion-card-content>
+         {{item.comentario}}
+        </ion-card-content>
   </ion-card>
+  <ion-item>
+      <ion-input type="text" value="" [(ngModel)]="comentario" placeholder="Comentário"></ion-input>
+  </ion-item>
+    <button ion-button class="btn_comment" (click)="enviaComentario()" >Button</button>
 </ion-content>
