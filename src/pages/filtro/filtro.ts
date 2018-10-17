@@ -20,9 +20,10 @@ export class FiltroPage {
   filosofia;
   quimica;
   public type;
-  constructor(public navCtrl: NavController, public navParams: NavParams, private materias:MateriasProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private materias: MateriasProvider) {
     this.type = this.navParams.get("type");
     console.log(this.type);
+    console.log(materias);
   }
 
 

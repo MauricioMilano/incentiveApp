@@ -18,6 +18,7 @@ import { SalvosPage } from '../pages/salvos/salvos';
 import { FormsModule } from '@angular/forms';
 import { FiltroPage } from '../pages/filtro/filtro';
 import { MateriasProvider } from '../providers/materias/materias';
+import { SelecionarTagsPage } from '../pages/selecionar-tags/selecionar-tags';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { MateriasProvider } from '../providers/materias/materias';
     BuscaPage,
     SalvosPage,
     PerfilPage,
-    FiltroPage
+    FiltroPage,
+    SelecionarTagsPage
   ],
   imports: [
     BrowserModule,
@@ -49,7 +51,8 @@ import { MateriasProvider } from '../providers/materias/materias';
     BuscaPage,
     SalvosPage,
     PerfilPage,
-    FiltroPage
+    FiltroPage,
+    SelecionarTagsPage
   ],
   providers: [
     StatusBar,

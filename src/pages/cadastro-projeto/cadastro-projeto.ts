@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { FormsModule } from '@angular/forms';
 import { MateriasProvider } from '../../providers/materias/materias';
+import { FiltroPage } from '../filtro/filtro';
 
 /**
  * Generated class for the CadastroProjetoPage page.
@@ -21,10 +22,10 @@ export class CadastroProjetoPage {
   texto: string;
   colaboradores: string;
   nomeImagem: string[] = [];
-  image: any[] = [];
+  image64: any[] = [];
   temImagem = false;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private materias: MateriasProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private materias: MateriasProvider, private alertCtrl: AlertController) {
   }
 
   ionViewDidLoad() {
@@ -35,6 +36,30 @@ export class CadastroProjetoPage {
     this.readThis(data.target);
     console.log(data);
     
+  }
+  
+  delete(index) {
+    let alert = this.alertCtrl.create({
+      title: 'Deletar',
+      message: 'Tem certeza que deseja deletar?',
+      buttons: [
+        {
+          text: 'Não',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Sim',
+          handler: () => {
+            this.image64.splice(index, 1);
+            this.nomeImagem.splice(index, 1);
+          }
+        }
+      ]
+    });
+    alert.present();
   }
   
   readThis(inputValue: any): void {
@@ -58,13 +83,14 @@ export class CadastroProjetoPage {
       myReader.readAsDataURL(element);
       
       myReader.onloadend = ((e) => {
-        this.image.push(myReader.result); 
+        this.image64.push(myReader.result); 
         this.temImagem = true;
       })
     });
     
   }
-  onSubmit() {
   
+  onSubmit() {
+    this.navCtrl.push(FiltroPage, {type: "materia"});
   }
 }
