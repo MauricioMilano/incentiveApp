@@ -25,6 +25,7 @@ export class ProjetoProvider {
             comentarios: string[]
             }[] = [];
 public todosProjetos:any = [];
+
   constructor(private storage: Storage) {
     console.log('Hello ProjetoProvider Provider');
   }
@@ -58,22 +59,37 @@ public todosProjetos:any = [];
     });
     return promise;
   }
-  getProjetosMateria(materias: string[]) {
-  let novo = [];
-  var promise = new Promise ((resolve, reject)=>{
-    this.getProjetos().then(()=>{
-      this.todosProjetos.forEach(element => {
-        if(this.verifica(materias,element)){
-          novo.push(element);
-        }
+  getProjetosMateria(mat: string[]) {
+    let novo = [];
+    var promise = new Promise ((resolve, reject)=>{
+      this.getProjetos().then(()=>{
+        novo = this.todosProjetos.filter((proj) => {
+          console.log(proj.materias);
+          
+          let cont = 0;
+          for(let i = 0; i < mat.length; i++) {
+            let index = proj.materias.find((x) => x == mat[i]);
+            console.log(index);
+            if(!index) {
+              break;
+            }
+            cont++;
+          }
+          console.log(cont);
+          
+          if(cont == mat.length) {
+            return true;
+          }
+        })
+      }).then(()=>{
+        resolve(novo);
+      })
+    });
+    return promise;
+  } 
 
-      });
-    }).then(()=>{
-      resolve(novo);
-    })
-  })
-  return promise;
-}
+  
+
   verifica(materias,projeto){
     let cont = 0; 
     materias.forEach(element => {
@@ -86,6 +102,7 @@ public todosProjetos:any = [];
        return true;
      }
     })
+    return true;
   }
   getProjetosUniversidade(univ: string) {
     // TODO

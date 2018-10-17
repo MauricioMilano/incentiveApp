@@ -51,14 +51,14 @@ export class FiltroPage {
   }
 
   onPesquisar() {
-  console.log(this.objfinal);
+    console.log(this.objfinal);
 
-  this.projeto.getProjetos().then(resp=>{
-    console.log("entrou aqui")
-    this.navCtrl.push(FeedPage,{posts:resp});
-  })
-  
-}
+    this.projeto.getProjetosMateria(this.objfinal).then(resp => {
+      console.log(resp);
+      this.navCtrl.push(FeedPage, {posts: resp});
+    })
+
+  }
 
   onCadastrar() {
     this.post.materias = this.objfinal;
